@@ -8,7 +8,6 @@
     'depends': ['account', 'sale', 'sale_management'],
     'data': [
         'security/ir.model.access.csv',
-        'views/account_move_views.xml',
     ],
     'installable': True,
     'application': True,
