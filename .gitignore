@@ -1,0 +1,40 @@
+# Ignorer les fichiers de configuration spécifiques à l'utilisateur
+*.conf
+
+# Ignorer les fichiers de cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+
+# Ignorer les fichiers de compilation
+*.o
+*.so
+
+# Ignorer les fichiers de documentation générés
+docs/_build/
+
+# Ignorer les fichiers de test
+tests/
+
+# Ignorer les fichiers de configuration de l'environnement
+.env
+
+# Ignorer les fichiers de configuration de l'IDE
+.idea/
+.vscode/
+
+# Ignorer les fichiers de configuration de Git
+.git/
+
+# Ignorer les fichiers de configuration de Docker
+docker-compose.override.yml
+
+#ignorer les fichier de phpstorm
+*.idea
+.idea/workspace.xml
