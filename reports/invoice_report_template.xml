@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_with_down_payment" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[hasclass('page')]/div[last()]" position="after">
+            <t t-if="o.down_payment_product_lines">
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h4>Produits Inclus dans le devis d'origine</h4>
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th class="text-right">Quantité</th>
+                                    <th class="text-right">Prix unitaire</th>
+                                    <th class="text-right">total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.down_payment_product_lines" t-as="line">
+                                    <td>
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.quantity"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_unit"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-esc="line.quantity * line.price_unit"
+                                              t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="view_move_form_inherit_custom_down_payment" model="ir.ui.view">
+            <field name="name">account.move.form.inherit.custom.down.payment</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Produits de la facture" attrs="{'invisible': [('down_payment_product_lines', '=', False)]}">
+                        <field name="down_payment_product_lines">
+                            <tree editable="bottom" create="false" delete="false">
+                                <field name="product_id" readonly="1"/>
+                                <field name="name" readonly="1"/>
+                                <field name="quantity" readonly="1"/>
+                                <field name="price_unit" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
